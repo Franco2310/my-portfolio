@@ -1,0 +1,67 @@
+<!-- Bloque del carrito -->
+<h1>Carrito de compras de la Scaloneta</h1>
+
+<nav class="filter-nav">
+    <button (click)="filterProducts('camisetas')">Camisetas</button>
+    <button (click)="filterProducts('shorts')">Shorts</button>
+    <button (click)="filterProducts('camperas')">Camperas</button>
+    <button (click)="filterProducts('todos')">Todos</button>
+</nav>
+
+<div id="products">
+    <div class="product" data-category="camisetas">
+        <img src="../imagenes/Camiseta-2023.png" alt="Camiseta 1">
+        <button (click)="addToCart('Camiseta Argentina 2023', 3000, '../imagenes/Camiseta-2023.png')">🛒</button>
+    </div>
+    <div class="product" data-category="camisetas">
+        <img src="../imagenes/Camiseta-2022.png" alt="Camiseta 2">
+        <button (click)="addToCart('Camiseta Argentina 2022', 2800, '../imagenes/Camiseta-2022.png')">🛒</button>
+    </div>
+    <div class="product" data-category="camisetas">
+        <img src="../imagenes/Camiseta-Retro.png" alt="Camiseta 3">
+        <button (click)="addToCart('Camiseta Argentina Retro', 3200, '../imagenes/Camiseta-Retro.png')">🛒</button>
+    </div>
+
+    <div class="product" data-category="shorts">
+        <img src="../imagenes/Short-2023.png" alt="Short 1">
+        <button (click)="addToCart('Short Argentina 2023', 1500, '../imagenes/Short-2023.png')">🛒</button>
+    </div>
+    <div class="product" data-category="shorts">
+        <img src="../imagenes/Short-2022.png" alt="Short 2">
+        <button (click)="addToCart('Short Argentina 2022', 1400, '../imagenes/Short-2022.png')">🛒</button>
+    </div>
+    <div class="product" data-category="shorts">
+        <img src="../imagenes/Short-Retro.png" alt="Short 3">
+        <button (click)="addToCart('Short Argentina Training', 1600, '../imagenes/Short-Retro.png')">🛒</button>
+    </div>
+
+    <div class="product" data-category="camperas">
+        <img src="../imagenes/Campera-2023.png" alt="Campera 1">
+        <button (click)="addToCart('Campera Argentina 2023', 5000, '../imagenes/Campera-2023.png')">🛒</button>
+    </div>
+    <div class="product" data-category="camperas">
+        <img src="../imagenes/Campera-Invierno.png" alt="Campera 2">
+        <button (click)="addToCart('Campera Argentina Invierno', 5500, '../imagenes/Campera-Invierno.png')">🛒</button>
+    </div>
+    <div class="product" data-category="camperas">
+        <img src="../imagenes/Campera-Clasica.png" alt="Campera 3">
+        <button (click)="addToCart('Campera Argentina Clásica', 6000, '../imagenes/Campera-Clasica.png')">🛒</button>
+    </div>
+</div>
+
+<div class="cart-container">
+    <div class="cart-icon" (click)="toggleCart()">
+        🛒
+        <span id="cart-count">0</span>
+    </div>
+</div>
+
+<div class="cart-menu" id="cart-menu">
+    <div class="cart-header">
+        <h2>Tu carrito</h2>
+        <span id="close-cart" (click)="toggleCart()" class="close-btn">❌</span>
+    </div>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: $0</p>
+    <button (click)="checkout()">Pagar</button>
+</div>

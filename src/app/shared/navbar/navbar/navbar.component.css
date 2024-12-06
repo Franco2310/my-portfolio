@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Header General */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent; /* Sin fondo */
+  color: white;
+}
+
+/* Estilos del menú de hamburguesa */
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Navegación principal centrada */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%; /* Asegurar el centrado vertical */
+}
+
+.nav-links li {
+  text-align: center;
+  margin: 1rem 0;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Estilo del sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Ocultar fuera de la pantalla */
+  height: 100%;
+  width: 250px;
+  background-color: #444;
+  color: white;
+  transition: 0.3s; /* Transición suave */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%; /* Asegurar que ocupe todo el espacio disponible */
+}
+
+.sidebar li {
+  padding: 1rem;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .close-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Mostrar el menú cuando la clase 'open-sidebar' está activa */
+.open-sidebar {
+  left: 0; /* Mostrar el menú */
+}

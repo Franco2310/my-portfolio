@@ -1,0 +1,234 @@
+h1 {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: blue;
+}
+
+.cart-icon {
+  font-size: 1.5rem; /* Tamaño del ícono */
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 2rem; /* Ajusta este valor para colocarlo más abajo */
+  right: 1rem;
+}
+
+/* Estilo para el botón remove-btn */
+.remove-btn {
+  background-color: #ff5733; 
+  color: white;              
+  border: none;               
+  padding: 8px 16px;          
+  font-size: 14px;            
+  border-radius: 5px;         
+  cursor: pointer;          
+  transition: background-color 0.3s; 
+}
+
+.remove-btn:hover {
+  background-color: #e04e28;  
+}
+
+
+.cart-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+
+.cart-header {
+  display: flex; /* Usar flexbox para el encabezado */
+  justify-content: space-between; /* Espacio entre el título y la "X" */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.cart-header h2 {
+  font-size: 22px;
+  margin: 0; /* Eliminar margen para alinear correctamente */
+  color: #333;
+}
+
+#close-cart {
+  font-size: 22px; /* Ajusta el tamaño según sea necesario */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+#cart-count {
+  color: black;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 70vh;
+  margin-bottom: 20px;
+}
+
+#cart-items li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen del producto en el carrito */
+#cart-items li img {
+  width: 70px; /* Tamaño de la imagen */
+  height: 70px; /* Altura ajustada */
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+  border-radius: 5px;
+}
+
+/* Contenedor de la descripción y el precio */
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Descripción y precio */
+.cart-item-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  text-align: center; /* Centrar la descripción */
+}
+
+.cart-item-price {
+  font-weight: bold;
+  color: #1e90ff;
+  text-align: center; /* Centrar el precio */
+}
+
+/* Botón de eliminar ajustado */
+#cart-items li button {
+  background-color: #ff6b6b;  /* Color de fondo */
+  color: white;  /* Color del texto */
+  border: none;  /* Sin borde */
+  padding: 8px 10px;  /* Ajustar el tamaño del botón */
+  font-size: 14px;  /* Tamaño de fuente */
+  border-radius: 5px;  /* Bordes redondeados */
+  cursor: pointer;  /* Cambio de cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease, transform 0.2s ease;  /* Transición suave para fondo y escala */
+  margin-left: auto;  /* Empujar el botón hacia la derecha */
+  width: 80px;  /* Definir un ancho específico para el botón */
+  text-align: center;  /* Alinear el texto al centro */
+}
+
+/* Efecto hover para el botón de eliminar */
+#cart-items li button:hover {
+  background-color: #e63946;  /* Color de fondo en hover */
+  transform: scale(1.05);  /* Agrandar ligeramente el botón en hover */
+}
+
+/* Efecto activo para el botón de eliminar (cuando se hace clic) */
+#cart-items li button:active {
+  transform: scale(0.98);  /* Reducir ligeramente el tamaño cuando se hace clic */
+}
+
+/* Otros estilos del carrito */
+#cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+  margin-bottom: 5px; /* Reduce el margen para que el botón quede más arriba */
+}
+
+button {
+  cursor: pointer;
+}
+
+.cart-menu button {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px; /* Añade un margen superior al botón para separarlo del total */
+  margin-bottom: 30px;
+}
+
+.cart-menu button:hover {
+  background-color: #1c86ee;
+}
+
+/* Estilos de los productos */
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar los productos */
+  gap: 20px; /* Espacio entre productos */
+  margin: 20px 0; /* Espacio superior e inferior */
+}
+
+.product {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px; /* Ancho fijo para los productos */
+  text-align: center; /* Centramos el texto */
+}
+
+.product img {
+  width: 100%; /* Imagen ocupa todo el ancho del producto */
+  border-radius: 5px;
+}
+
+.product button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #1c86ee;
+}
+
+/* Estilos de los botones de filtrado */
+nav {
+  display: flex;
+  justify-content: center; /* Centrar los botones de filtrado */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+nav button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: medium;
+}
+
+nav button:hover {
+  background-color: #1c86ee;
+}
+
+

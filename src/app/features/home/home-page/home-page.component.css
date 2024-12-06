@@ -1,0 +1,32 @@
+h1 {
+  text-align: center;
+  color: blue;
+  padding: 1.2rem;
+  font-size: 32px;
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+.parrafos {
+  color: blue;
+  text-align: justify;
+  padding: 1rem;
+  width: 94%;
+  display: block;
+  margin: 0 auto;
+  font-size: large;
+}
+
+.picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 50%;
+  padding-bottom: 1rem;
+}
