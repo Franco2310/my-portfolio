@@ -74,40 +74,56 @@ export class CarritoPageComponent implements OnInit {
 
       this.cart.forEach((item, index) => {
         const li = this.renderer.createElement('li');
-      
-        li.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" />
-          <div class="cart-item-details">
-            <p>${item.name}</p>
-            <p class="cart-item-price">$${item.price}</p>
-          </div>
-          <button class="remove-btn">Eliminar</button>
-        `;
-      
-        const removeBtn = li.querySelector('.remove-btn');
-        if (removeBtn) {
-          // Agregar evento de click
-          removeBtn.addEventListener('click', () => this.removeFromCart(index));
-      
-          // Cambiar los estilos directamente con Renderer2
-          this.renderer.setStyle(removeBtn, 'background-color', '#ff5733');
-          this.renderer.setStyle(removeBtn, 'color', 'white');
-          this.renderer.setStyle(removeBtn, 'border', 'none');
-          this.renderer.setStyle(removeBtn, 'padding', '8px 16px');
-          this.renderer.setStyle(removeBtn, 'font-size', '14px');
-          this.renderer.setStyle(removeBtn, 'border-radius', '5px');
-          this.renderer.setStyle(removeBtn, 'cursor', 'pointer');
-          this.renderer.setStyle(removeBtn, 'transition', 'background-color 0.3s');
-        }
-      
-        // Agregar el item al DOM
+        this.renderer.setStyle(li, 'display', 'flex');
+        this.renderer.setStyle(li, 'justify-content', 'space-between');
+        this.renderer.setStyle(li, 'align-items', 'center');
+        this.renderer.setStyle(li, 'padding', '10px');
+        this.renderer.setStyle(li, 'border-bottom', '1px solid #ccc');
+
+        const detailsDiv = this.renderer.createElement('div');
+        this.renderer.setStyle(detailsDiv, 'flex', '1');
+        this.renderer.setStyle(detailsDiv, 'display', 'flex');
+        this.renderer.setStyle(detailsDiv, 'flex-direction', 'column');
+        this.renderer.setStyle(detailsDiv, 'align-items', 'center'); // Centrar descripción y precio horizontalmente
+        this.renderer.setStyle(detailsDiv, 'justify-content', 'center'); // Centrar descripción y precio verticalmente
+
+        const description = this.renderer.createElement('p');
+        description.textContent = item.name;
+        this.renderer.setStyle(description, 'text-align', 'center');
+
+        const price = this.renderer.createElement('p');
+        price.textContent = `$${item.price}`;
+        this.renderer.setStyle(price, 'text-align', 'center');
+
+        this.renderer.appendChild(detailsDiv, description);
+        this.renderer.appendChild(detailsDiv, price);
+
+        const removeBtnDiv = this.renderer.createElement('div');
+        this.renderer.setStyle(removeBtnDiv, 'flex', '1');
+        this.renderer.setStyle(removeBtnDiv, 'display', 'flex');
+        this.renderer.setStyle(removeBtnDiv, 'justify-content', 'center');
+        this.renderer.setStyle(removeBtnDiv, 'align-items', 'center');
+
+        const removeBtn = this.renderer.createElement('button');
+        removeBtn.textContent = 'Eliminar';
+        this.renderer.setStyle(removeBtn, 'background-color', '#ff5733');
+        this.renderer.setStyle(removeBtn, 'color', 'white');
+        this.renderer.setStyle(removeBtn, 'border', 'none');
+        this.renderer.setStyle(removeBtn, 'padding', '8px 16px');
+        this.renderer.setStyle(removeBtn, 'font-size', '14px');
+        this.renderer.setStyle(removeBtn, 'border-radius', '5px');
+        this.renderer.setStyle(removeBtn, 'cursor', 'pointer');
+        this.renderer.setStyle(removeBtn, 'transition', 'background-color 0.3s');
+
+        removeBtn.addEventListener('click', () => this.removeFromCart(index));
+        this.renderer.appendChild(removeBtnDiv, removeBtn);
+
+        this.renderer.appendChild(li, detailsDiv);
+        this.renderer.appendChild(li, removeBtnDiv);
         this.renderer.appendChild(cartItemsElement, li);
-      
-        // Sumar el precio al total
+
         total += item.price;
       });
-      
-      
 
       cartTotalElement.textContent = `Total: $${total}`;
     }
